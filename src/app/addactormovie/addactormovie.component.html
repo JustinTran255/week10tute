@@ -1,0 +1,39 @@
+<div class="section">
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Birth Year</th>
+      <th>Select</th>
+    </tr>
+    <tr *ngFor="let item of actorsDB">
+      <td>{{item.name}}</td>
+      <td>{{item.bYear}}</td>
+      <td><button type="submit" class="btn btn-primary" (click)="selectActor(item)">+</button></td>
+    </tr>
+  </table>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Select</th>
+    </tr>
+    <tr *ngFor="let item of movieDB">
+      <td>{{item.title}}</td>
+      <td>{{item.year}}</td>
+      <td><button type="submit" class="btn btn-primary" (click)="selectMovie(item)">+</button></td>
+    </tr>
+  </table>
+  <button type="submit" class="btn btn-primary" (click)="onAddActor()">Add Movie</button>
+</div>
+
+
+
+<div class="alert alert-info" role="alert" *ngIf="selectedActor!=null">
+  <h2>{{selectedActor.name}}</h2>
+</div>
+<div class="alert alert-info" role="alert" *ngIf="selectedMovie!=null">
+  <h2>{{selectedMovie.title}}</h2>
+</div>
+
+
